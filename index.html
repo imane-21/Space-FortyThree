@@ -193,10 +193,12 @@
 
 
         document.getElementById('introVideo').addEventListener('ended', function () {
-            this.style.display = 'none'; 
-e
-
-            startSolarSystemAnimation();
+            const video = document.getElementById('introVideo');
+            video.pause();  
+            video.style.display = 'none';  
+            document.getElementById('skipButton').style.display = 'none';  
+            document.getElementById('playButtonContainer').style.display = 'none';
+            startSolarSystemAnimation();  
         });
 
         function startSolarSystemAnimation() {
