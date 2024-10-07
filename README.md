@@ -3,7 +3,7 @@
 ## Overview
 This repository contains the code for a website we built in 48 hours during the Space Apps Challenge hackathon in Paris, on the weekend of October 5th, 2024.
 
-Our project was based on the topic: ["Create an Orrery Web App that Displays Near-Earth Objects"](https://2024.spaceappschallenge.org/challenges/2024-challenges/near-earth-objects/).
+Our project was based on the topic: ["Create an Orrery Web App that Displays Near-Earth Objects"](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/create-an-orrery-web-app-that-displays-near-earth-objects/).
 
 You can visit the official website of the project [here](https://imane-21.github.io/Space-FortyThree/).
 
