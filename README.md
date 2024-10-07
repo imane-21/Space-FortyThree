@@ -20,7 +20,7 @@ You can visit the official website of the project [here](https://imane-21.github
 
 ## Improvements
 - **Planet information**: Improve the details and accuracy of planet data.
-- **Zoom functionality**: Add a zoom feature to explore planets and objects in more detail.
+- **Zoom functionality**: Improve the zoom feature to explore planets and objects in more detail.
 - **Content enhancement**: Include richer and more immersive content for a better user experience.
 - **Scientific accuracy**: Use more realistic and up-to-date scientific data for Near-Earth Objects.
 
