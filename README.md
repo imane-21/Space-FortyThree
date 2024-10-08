@@ -33,4 +33,4 @@ You can visit the official website of the project [here](https://imane-21.github
 - [Yassin Fradj](https://github.com/yassn0)
 - [Said Lebik](https://github.com/slkrt111)
 - [Bilal Hamani](https://github.com/Bilscript)
-- [Sami Hessoun]()
+- [Sami Hessoun](https://github.com/akshayyy12a)
