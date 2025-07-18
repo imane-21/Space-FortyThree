@@ -103,7 +103,8 @@ class SpaceFortyThree {
      * Crée le champ d'étoiles
      */
     setupStars() {
-        Utils.createStarField(this.scene);
+        // Étoiles supprimées selon la demande de l'utilisateur
+        // Utils.createStarField(this.scene);
     }
 
     /**

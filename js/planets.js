@@ -212,8 +212,16 @@ export class PlanetSystem {
             // Animation orbitale avec vitesses réalistes
             if (planet.data.orbitRadius > 0) {
                 planet.angle += planet.data.orbitSpeed;
-                planet.mesh.position.x = Math.cos(planet.angle) * planet.data.orbitRadius;
-                planet.mesh.position.z = Math.sin(planet.angle) * planet.data.orbitRadius;
+                
+                // Calcul de la position elliptique
+                const position = this.calculateEllipticalPosition(
+                    planet.angle,
+                    planet.data.orbitRadius,
+                    planet.data.eccentricity || 0
+                );
+                
+                planet.mesh.position.x = position.x;
+                planet.mesh.position.z = position.z;
             }
 
             // Rotation sur l'axe avec vitesses réalistes
@@ -237,6 +245,23 @@ export class PlanetSystem {
                 this.moon.rotation.y += MOON_DATA.rotationSpeed;
             }
         }
+    }
+
+    /**
+     * Calcule la position sur une orbite elliptique
+     */
+    calculateEllipticalPosition(angle, semiMajorAxis, eccentricity) {
+        // Calcul de l'anomalie excentrique (équation de Kepler simplifiée)
+        const eccentricAnomaly = angle + eccentricity * Math.sin(angle);
+        
+        // Calcul de la distance au foyer (Soleil)
+        const distance = semiMajorAxis * (1 - eccentricity * Math.cos(eccentricAnomaly));
+        
+        // Position dans l'ellipse
+        const x = distance * Math.cos(eccentricAnomaly);
+        const z = distance * Math.sin(eccentricAnomaly) * Math.sqrt(1 - eccentricity * eccentricity);
+        
+        return { x, z };
     }
 
     /**

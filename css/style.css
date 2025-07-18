@@ -36,15 +36,46 @@ canvas {
     font-family: 'Orbitron', sans-serif;
     bottom: 20px;
     left: 20px;
-    max-width: 300px;
-    background: rgba(0, 0, 0, 0.8);
+    max-width: 350px;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     font-size: 16px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-    border: 2px solid white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     line-height: 1.6;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#planetInfo.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#planetInfo h2 {
+    margin: 0 0 15px 0;
+    color: #6082B6;
+    font-size: 20px;
+    border-bottom: 2px solid #6082B6;
+    padding-bottom: 8px;
+}
+
+#planetInfo .planet-stats {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+#planetInfo .planet-stats p {
+    margin: 5px 0;
+    font-size: 14px;
 }
 
 #dialogue {

@@ -11,14 +11,17 @@ export class Utils {
         const starGeometry = new THREE.BufferGeometry();
         const starMaterial = new THREE.PointsMaterial({ 
             color: CONFIG.STARS.COLOR,
-            size: 2.0,
-            transparent: true,
+            size: 3.0,
+            transparent: false,
             opacity: 1.0,
-            sizeAttenuation: true
+            sizeAttenuation: false,
+            vertexColors: true,
+            depthTest: false,
+            blending: THREE.AdditiveBlending
         });
 
         const starVertices = [];
-        const starSizes = [];
+        const starColors = [];
         
         for (let i = 0; i < CONFIG.STARS.COUNT; i++) {
             const x = (Math.random() - 0.5) * CONFIG.STARS.SPREAD;
@@ -26,14 +29,16 @@ export class Utils {
             const z = (Math.random() - 0.5) * CONFIG.STARS.SPREAD;
             starVertices.push(x, y, z);
             
-            // Variation de taille des étoiles pour plus de réalisme
-            starSizes.push(Math.random() * 3 + 1);
+            // Variation de couleur des étoiles (blanc à bleu-blanc)
+            const brightness = 0.5 + Math.random() * 0.5;
+            starColors.push(brightness, brightness, 1.0);
         }
 
         starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-        starGeometry.setAttribute('size', new THREE.Float32BufferAttribute(starSizes, 1));
+        starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
         
         const stars = new THREE.Points(starGeometry, starMaterial);
+        stars.renderOrder = -1; // S'assurer que les étoiles sont rendues en premier
         scene.add(stars);
         
         return stars;

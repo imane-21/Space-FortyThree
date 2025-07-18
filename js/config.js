@@ -93,6 +93,17 @@ const REAL_ASTRONOMICAL_DATA = {
         Saturn: 10.66,
         Uranus: -17.24, // rétrograde
         Neptune: 16.11
+    },
+    // Excentricité des orbites (0 = cercle parfait, proche de 1 = très elliptique)
+    eccentricity: {
+        Mercury: 0.2056,  // Très elliptique
+        Venus: 0.0068,    // Presque circulaire
+        Earth: 0.0167,    // Presque circulaire
+        Mars: 0.0934,     // Modérément elliptique
+        Jupiter: 0.0484,  // Légèrement elliptique
+        Saturn: 0.0539,   // Légèrement elliptique
+        Uranus: 0.0473,   // Légèrement elliptique
+        Neptune: 0.0086   // Presque circulaire
     }
 };
 
@@ -162,6 +173,7 @@ export const PLANET_DATA = [
         orbitRadius: 968, // 0.39 * 1200 + 500 = 968
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Mercury, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Mercury),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Mercury),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Mercury,
         color: 0x888888,
         textureFile: "mercuretexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Mercury,
@@ -187,6 +199,7 @@ export const PLANET_DATA = [
         orbitRadius: 1364, // 0.72 * 1200 + 500 = 1364
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Venus, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Venus),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Venus),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Venus,
         color: 0xe6e6e6,
         textureFile: "venustexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Venus,
@@ -212,6 +225,7 @@ export const PLANET_DATA = [
         orbitRadius: 1700, // 1.00 * 1200 + 500 = 1700
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Earth, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Earth),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Earth),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Earth,
         color: 0x2233ff,
         textureFile: "earthtexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Earth,
@@ -237,6 +251,7 @@ export const PLANET_DATA = [
         orbitRadius: 2324, // 1.52 * 1200 + 500 = 2324
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Mars, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Mars),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Mars),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Mars,
         color: 0xff3300,
         textureFile: "marstexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Mars,
@@ -262,6 +277,7 @@ export const PLANET_DATA = [
         orbitRadius: 6740, // 5.20 * 1200 + 500 = 6740
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Jupiter, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Jupiter),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Jupiter),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Jupiter,
         color: 0xffaa88,
         textureFile: "jupitertexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Jupiter,
@@ -287,6 +303,7 @@ export const PLANET_DATA = [
         orbitRadius: 11948, // 9.54 * 1200 + 500 = 11948
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Saturn, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Saturn),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Saturn),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Saturn,
         color: 0xffdd88,
         textureFile: "saturntexture.jpg",
         hasRings: true,
@@ -314,6 +331,7 @@ export const PLANET_DATA = [
         orbitRadius: 23516, // 19.18 * 1200 + 500 = 23516
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Uranus, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Uranus),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Uranus),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Uranus,
         color: 0x88ffff,
         textureFile: "uranustexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Uranus,
@@ -339,6 +357,7 @@ export const PLANET_DATA = [
         orbitRadius: 36572, // 30.06 * 1200 + 500 = 36572
         orbitSpeed: calculateOrbitalSpeed(REAL_ASTRONOMICAL_DATA.distances.Neptune, REAL_ASTRONOMICAL_DATA.orbitalPeriods.Neptune),
         rotationSpeed: calculateRotationSpeed(REAL_ASTRONOMICAL_DATA.rotationPeriods.Neptune),
+        eccentricity: REAL_ASTRONOMICAL_DATA.eccentricity.Neptune,
         color: 0x4444ff,
         textureFile: "neptunetexture.jpg",
         realDistance: REAL_ASTRONOMICAL_DATA.distances.Neptune,

@@ -103,19 +103,29 @@ export class UIManager {
             <p>${planetData.description}</p>
             <div class="planet-stats">
                 <p><strong>Radius:</strong> ${planetData.radius} units</p>
-                <p><strong>Orbit Radius:</strong> ${planetData.orbitRadius} units</p>
-                ${planetData.orbitSpeed ? `<p><strong>Orbit Speed:</strong> ${planetData.orbitSpeed.toFixed(4)} units/frame</p>` : ''}
+                <p><strong>Distance:</strong> ${planetData.realDistance || 'N/A'} AU</p>
+                <p><strong>Orbital Period:</strong> ${planetData.realOrbitalPeriod || 'N/A'} Earth years</p>
+                <p><strong>Rotation Period:</strong> ${Math.abs(planetData.realRotationPeriod || 0).toFixed(1)} hours</p>
+                ${planetData.eccentricity ? `<p><strong>Orbit Eccentricity:</strong> ${planetData.eccentricity.toFixed(4)} ${planetData.eccentricity > 0.1 ? '(elliptical)' : '(nearly circular)'}</p>` : ''}
             </div>
         `;
         
         this.planetInfoElement.style.display = 'block';
+        // Ajouter la classe visible avec un léger délai pour l'animation
+        setTimeout(() => {
+            this.planetInfoElement.classList.add('visible');
+        }, 50);
     }
 
     /**
      * Cache les informations de la planète
      */
     hidePlanetInfo() {
-        this.planetInfoElement.style.display = 'none';
+        this.planetInfoElement.classList.remove('visible');
+        // Cacher complètement après l'animation
+        setTimeout(() => {
+            this.planetInfoElement.style.display = 'none';
+        }, 300);
     }
 
     /**

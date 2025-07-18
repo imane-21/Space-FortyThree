@@ -172,10 +172,21 @@ export class CameraController {
      * Calcule la distance de zoom appropriée pour un objet
      */
     calculateZoomDistance(radius, name) {
-        if (name === "Moon") {
-            return CONFIG.UI.MOON_ZOOM_DISTANCE;
-        }
-        return Math.max(CONFIG.UI.ZOOM_BASE_DISTANCE, radius * 10);
+        // Distances personnalisées pour chaque planète - plus loin pour éviter d'entrer dans les textures
+        const customDistances = {
+            "Sun": radius * 15,       // Très loin du Soleil
+            "Mercury": radius * 12,   // Loin de Mercure
+            "Venus": radius * 12,     // Loin de Vénus
+            "Earth": radius * 10,     // Distance sûre pour la Terre
+            "Moon": radius * 8,       // Distance sûre pour la Lune
+            "Mars": radius * 10,      // Distance sûre pour Mars
+            "Jupiter": radius * 8,    // Distance sûre pour Jupiter
+            "Saturn": radius * 8,     // Distance sûre pour voir les anneaux
+            "Uranus": radius * 10,    // Distance sûre
+            "Neptune": radius * 10    // Distance sûre
+        };
+        
+        return customDistances[name] || Math.max(CONFIG.UI.ZOOM_BASE_DISTANCE, radius * 10);
     }
 
     /**
@@ -314,9 +325,19 @@ export class CameraController {
             }
             
             const targetPosition = this.zoomTarget.mesh.position.clone();
-            targetPosition.y += 100;
             
-            this.camera.position.lerp(targetPosition, CONFIG.CAMERA.ZOOM_LERP_SPEED);
+            // Calculer la position de la caméra basée sur la distance de zoom
+            const zoomDistance = this.calculateZoomDistance(
+                this.zoomTarget.data.radius,
+                this.zoomTarget.data.name
+            );
+            
+            // Positionner la caméra à une distance sûre
+            const cameraPosition = targetPosition.clone();
+            cameraPosition.y += zoomDistance * 0.3; // Légèrement au-dessus
+            cameraPosition.z += zoomDistance * 0.8; // Principalement en arrière
+            
+            this.camera.position.lerp(cameraPosition, CONFIG.CAMERA.ZOOM_LERP_SPEED);
             this.camera.lookAt(targetPosition);
         }
     }
