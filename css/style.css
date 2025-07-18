@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+canvas {
+    display: block;
+}
+
+#info {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    top: 20px;
+    right: 20px;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #6082B6;
+    font-weight: bold;
+}
+
+#planetInfo {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    bottom: 20px;
+    left: 20px;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    line-height: 1.6;
+}
+
+#dialogue {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: center;
+}
+
+#dialogueImage {
+    width: 100px;
+    height: 100px;
+}
+
+#introVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 9999;
+}
+
+#playButtonContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+#playButton {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#skipButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#skipButton:hover {
+    background-color: #dddddd;
+}
