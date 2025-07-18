@@ -1,0 +1,41 @@
+{
+  "name": "space-fortythree",
+  "version": "1.0.0",
+  "description": "Interactive 3D Solar System Visualization - Created for NASA Space Apps Challenge 2024",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static project - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "nasa",
+    "space",
+    "solar-system",
+    "3d",
+    "three.js",
+    "webgl",
+    "astronomy",
+    "education",
+    "interactive"
+  ],
+  "authors": [
+    "Imane Barahimi",
+    "Yassin Fradj",
+    "Said Lebik",
+    "Bilal Hamani",
+    "Sami Hessoun"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yassn0/Space-FortyThree"
+  },
+  "homepage": "https://space-forty-three.vercel.app",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
