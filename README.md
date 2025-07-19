@@ -41,62 +41,12 @@
 - **Smooth Zoom**: Intelligent camera positioning for optimal planet viewing
 - **Professional UI**: Clean, space-themed interface with smooth transitions
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Modern web browser with WebGL support
-- No installation required - runs directly in browser!
-
-
-## 🎯 How to Use
-
-1. **🎬 Watch the intro** or click "Skip" to jump straight to exploration
-2. **🌌 Navigate freely** using WASD keys to move through space
-3. **👁️ Look around** using arrow keys to control camera rotation
-4. **🌍 Click any planet** to zoom in and view detailed information
-5. **📚 Read scientific data** displayed in the information panel
-6. **🚀 Move to exit zoom** - use any movement key to return to free camera
-
-## 🛠️ Technologies Used
-
-- **[Three.js](https://threejs.org/)** - 3D graphics and WebGL rendering
-- **[Blender](https://www.blender.org/)** - Intro cinematic creation
-- **JavaScript ES6+** - Modern JavaScript with modules
-- **HTML5 & CSS3** - Responsive web interface
-- **WebGL** - Hardware-accelerated 3D graphics
-
 ## 🔬 Scientific Accuracy
 
 ### Planetary Data
 - **Orbital Distances**: Real distances in Astronomical Units (AU)
 - **Orbital Periods**: Accurate revolution times around the Sun
 - **Rotation Periods**: Real planetary day lengths
-- **Eccentricity Values**: Authentic elliptical orbit shapes
-
-### Kepler's Laws Implementation
-- **Elliptical Orbits**: Mercury (0.206), Mars (0.093), others nearly circular
-- **Orbital Mechanics**: Speed varies based on distance from Sun
-- **Proportional Scaling**: Maintains relative relationships
-
-## 📁 Project Structure
-
-```
-Space-FortyThree/
-├── index.html              # Main HTML file
-├── css/
-│   └── style.css           # Styling and animations
-├── js/
-│   ├── main.js            # Application entry point
-│   ├── config.js          # Scientific data and configuration
-│   ├── planets.js         # Planet system and orbital mechanics
-│   ├── camera.js          # Camera controls and movement
-│   ├── ui.js              # User interface management
-│   ├── interaction.js     # Click interactions and selection
-│   └── utils.js           # Utility functions
-└── assets/
-    ├── textures/          # Planet and moon textures
-    └── videos/            # Intro cinematic video
-```
 
 ## 👥 Contributors
 
